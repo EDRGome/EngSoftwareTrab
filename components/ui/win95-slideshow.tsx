@@ -52,10 +52,10 @@ const slides: Slide[] = [
     content: [
       "O sistema de gerenciamento comercial para uma loja de equipamentos agrícolas funciona como uma plataforma que gerencia o estoque, facilita as vendas e auxilia na gestão diária do negócio.",
       "• Gerenciamento de estoque de equipamentos agrícolas",
-      "• Processo simplificado de vendas",
-      "• Seleção de equipamentos",
       "• Serviços técnicos",
       "• Atualização automática do sistema",
+      "• Seleção de equipamentos",
+      "• Processo simplificado de vendas",
     ],
     icon: Hotel,
   },
@@ -69,14 +69,31 @@ const slides: Slide[] = [
       {
         url: "https://theenterpriseworld.com/wp-content/uploads/2024/09/2-Top-8-Tips-for-Smart-Agricultural-Equipment-Management.jpg",
         caption: "Fazendeiros - Os clientes que utilizam os serviços da loja",
+        content: [
+          "Clientes que utilizam os serviços da loja para aquisição e manutenção de equipamentos agrícolas.",
+          "Gerenciam seu perfil pessoal no sistema.",
+          "Visualizam o histórico de compras e serviços realizados",
+        ],
       },
       {
         url: "https://www.unilab.com.br/wp-content/uploads/2018/08/saiba-o-que-um-software-para-controle-de-estoque-precisa-ter-1000x500.jpeg",
         caption: "Funcionários da Loja - Equipe responsável pela operação",
+        content: [
+          "Administração Geral: Gerencia usuários e permissões do sistema, monitoramento de indicadores de negócio",
+          "Gestão de Vendas: Controla o estoque e realiza vendas, gera relatórios de vendas para análise do desempenho comercial.",
+          "Serviços Técnicos: Agenda e gerencia serviços de manutenção, controla orçamentos e registra histórico de reparos",
+          "Gestão de Estoques: Controla níveis de estoque e pedidos de reposição, realiza inventários físicos para garantir o abastecimento",
+          "Contabilidade e Finanças: Administra contas a pagar e receber, realiza cotações, balanços financeiros e gera relatórios detalhados.",
+        ],
       },
       {
         url: "https://blog.facilsistemas.com.br/wp-content/uploads/2023/03/Inteligencia-artificial.jpg",
         caption: "Fornecedores - Parceiros que fornecem produtos e serviços",
+        content: [
+          "Parceiros que fornecem produtos e serviços essenciais para a operação da loja.",
+          "Mantêm cadastros atualizados e enviam cotações e orçamentos.",
+          "Verificam o status de pedidos e garantem a disponibilidade dos produtos.",
+        ],
       },
     ],
   },
@@ -360,6 +377,15 @@ export default function Slideshow() {
               <p className="mt-1 text-center text-2xl font-bold font-[Segoe UI] text-gray-700">
                 {image.caption.split(" - ")[1]}
               </p>
+              {image.content && (
+                <ul className="mt-3 text-lg text-gray-800 list-disc list-inside">
+                  {image.content.map((item, idx) => (
+                    <li key={idx} className="mt-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
